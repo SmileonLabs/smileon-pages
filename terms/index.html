@@ -3,17 +3,47 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Velo - 이용약관</title>
+  <title>Velo - Terms of Service</title>
   <style>
     * { margin: 0; padding: 0; box-sizing: border-box; }
     body {
-      font-family: 'Pretendard', -apple-system, BlinkMacSystemFont, sans-serif;
+      font-family: 'Pretendard', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
       background: #F5F7FA;
       color: #1A1D23;
       line-height: 1.8;
       -webkit-font-smoothing: antialiased;
     }
     .container { max-width: 720px; margin: 0 auto; padding: 48px 24px 80px; }
+    .lang-switcher {
+      display: flex;
+      justify-content: center;
+      gap: 4px;
+      margin-bottom: 32px;
+      background: #E5E8ED;
+      border-radius: 10px;
+      padding: 3px;
+      max-width: 320px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+    .lang-btn {
+      flex: 1;
+      padding: 8px 0;
+      border: none;
+      background: transparent;
+      color: #8E939E;
+      font-size: 14px;
+      font-weight: 600;
+      cursor: pointer;
+      border-radius: 8px;
+      transition: all 0.2s ease;
+    }
+    .lang-btn:hover { color: #3A3F4A; }
+    .lang-btn.active {
+      background: #fff;
+      color: #1A1D23;
+      box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+    }
     .hero { text-align: center; margin-bottom: 48px; }
     .hero h1 { font-size: 28px; font-weight: 700; margin-bottom: 8px; }
     .hero .date { font-size: 14px; color: #8E939E; }
@@ -24,116 +54,405 @@
     .footer { margin-top: 60px; padding-top: 24px; border-top: 1px solid #E5E8ED; text-align: center; font-size: 13px; color: #8E939E; }
     a { color: #2EC4D6; text-decoration: none; }
     a:hover { text-decoration: underline; }
+    .lang-content { display: none; }
+    .lang-content.active { display: block; }
   </style>
 </head>
 <body>
   <div class="container">
-    <div class="hero">
-      <h1>이용약관</h1>
-      <p class="date">시행일: 2026년 3월 20일 | 최종 수정: 2026년 3월 20일</p>
+    <div class="lang-switcher">
+      <button class="lang-btn active" data-lang="ko">한국어</button>
+      <button class="lang-btn" data-lang="en">English</button>
+      <button class="lang-btn" data-lang="ja">日本語</button>
+      <button class="lang-btn" data-lang="zh">中文</button>
     </div>
 
-    <h2>제1조 (목적)</h2>
-    <p>본 약관은 Smileon(이하 "회사")이 제공하는 Velo 서비스(이하 "서비스")의 이용과 관련하여 회사와 이용자 간의 권리, 의무 및 책임 사항 등을 규정함을 목적으로 합니다.</p>
-
-    <h2>제2조 (정의)</h2>
-    <ul>
-      <li><strong>"서비스"</strong>란 회사가 제공하는 사진 및 동영상 압축 애플리케이션 Velo와 이에 부수하는 모든 기능을 의미합니다.</li>
-      <li><strong>"이용자"</strong>란 본 약관에 따라 서비스를 이용하는 자를 의미합니다.</li>
-      <li><strong>"유료 서비스"</strong>란 월간 구독, 연간 구독, 평생 이용권 등 별도의 요금을 지불하고 이용하는 서비스를 의미합니다.</li>
-      <li><strong>"게스트"</strong>란 회원 가입 없이 제한된 기능을 체험하는 이용자를 의미합니다.</li>
-    </ul>
-
-    <h2>제3조 (약관의 효력 및 변경)</h2>
-    <p>본 약관은 서비스 내에 공지하거나 이메일 등의 방법으로 이용자에게 통지함으로써 효력이 발생합니다. 회사는 관련 법령에 위배되지 않는 범위에서 약관을 변경할 수 있으며, 변경 시 적용일 7일 전부터 앱 내 공지 또는 이메일을 통해 고지합니다.</p>
-
-    <h2>제4조 (서비스의 내용)</h2>
-    <p>회사가 제공하는 서비스의 주요 내용은 다음과 같습니다.</p>
-    <ul>
-      <li>사진 압축: HEIC, JPEG, WebP 형식의 이미지 파일 용량 최적화</li>
-      <li>동영상 압축: HEVC 인코딩 기반 비디오 파일 용량 최적화</li>
-      <li>폴더 스캔: 기기 내 사진 라이브러리의 앨범별·월별 파일 탐색</li>
-      <li>오버나이트 압축: 야간 시간대(21시~08시) 자동 압축 처리</li>
-      <li>압축 히스토리: 압축 결과 기록 및 통계 제공</li>
-    </ul>
-    <p>모든 압축 처리는 이용자의 기기 내에서 수행되며, 사진 및 동영상이 회사의 서버로 전송되지 않습니다.</p>
-
-    <h2>제5조 (서비스 이용 및 계정)</h2>
-    <ul>
-      <li>이용자는 Google 또는 Apple 계정을 통한 소셜 로그인으로 서비스에 가입할 수 있습니다.</li>
-      <li>게스트 모드로 회원 가입 없이 제한된 범위 내에서 서비스를 체험할 수 있습니다.</li>
-      <li>이용자는 자신의 계정 정보를 정확하게 유지할 책임이 있으며, 제3자에게 계정을 양도하거나 공유할 수 없습니다.</li>
-    </ul>
-
-    <h2>제6조 (무료 서비스 및 이용 제한)</h2>
-    <ul>
-      <li>무료(회원) 이용자: 이미지 20장, 동영상 3개까지 압축 가능</li>
-      <li>게스트 이용자: 이미지 5장, 동영상 5개, 스캔 1회까지 체험 가능</li>
-      <li>무료 이용량을 초과한 경우 유료 서비스 구독을 통해 이용 제한을 해제할 수 있습니다.</li>
-    </ul>
-
-    <h2>제7조 (유료 서비스 및 결제)</h2>
-    <ul>
-      <li>유료 서비스는 월간 구독, 연간 구독, 평생 이용권으로 제공됩니다.</li>
-      <li>결제는 Apple App Store 또는 Google Play Store의 인앱 결제 시스템을 통해 처리됩니다.</li>
-      <li>구독은 이용자가 직접 해지하지 않는 한 결제 주기에 따라 자동으로 갱신됩니다.</li>
-      <li>구독 해지는 각 스토어의 구독 관리 설정에서 가능하며, 해지 후에도 현재 결제 기간이 종료될 때까지 서비스를 이용할 수 있습니다.</li>
-    </ul>
-
-    <h2>제8조 (환불 정책)</h2>
-    <p>환불은 Apple App Store 및 Google Play Store의 환불 정책에 따릅니다. 회사는 스토어를 통해 처리된 결제에 대해 직접 환불을 진행하지 않으며, 이용자는 각 스토어의 환불 절차를 따라야 합니다.</p>
-
-    <h2>제9조 (이용자의 의무)</h2>
-    <p>이용자는 다음 행위를 하여서는 안 됩니다.</p>
-    <ul>
-      <li>서비스를 불법적인 목적으로 이용하는 행위</li>
-      <li>서비스의 정상적인 운영을 방해하는 행위</li>
-      <li>서비스를 역설계, 디컴파일, 또는 분해하는 행위</li>
-      <li>타인의 개인정보를 도용하여 서비스를 이용하는 행위</li>
-      <li>서비스를 이용하여 제3자의 저작권 등 지적재산권을 침해하는 행위</li>
-    </ul>
-
-    <h2>제10조 (회사의 의무)</h2>
-    <ul>
-      <li>회사는 관련 법령과 본 약관이 정하는 바에 따라 지속적이고 안정적으로 서비스를 제공하기 위해 노력합니다.</li>
-      <li>회사는 이용자의 개인정보를 보호하기 위해 개인정보처리방침을 수립하고 준수합니다.</li>
-      <li>회사는 서비스 장애 발생 시 신속하게 복구하기 위해 최선을 다합니다.</li>
-    </ul>
-
-    <h2>제11조 (서비스의 변경 및 중단)</h2>
-    <p>회사는 운영상 또는 기술상의 필요에 따라 서비스의 전부 또는 일부를 변경하거나 중단할 수 있습니다. 서비스 변경 또는 중단 시 사전에 앱 내 공지 또는 이메일을 통해 고지합니다. 다만, 불가피한 사유가 있는 경우 사후에 고지할 수 있습니다.</p>
-
-    <h2>제12조 (면책 조항)</h2>
-    <ul>
-      <li>회사는 이용자가 서비스를 통해 수행한 압축 결과에 대해 보증하지 않습니다. 이용자는 원본 파일의 백업을 직접 관리할 책임이 있습니다.</li>
-      <li>회사는 이용자의 귀책 사유로 인한 서비스 이용 장애에 대해 책임을 지지 않습니다.</li>
-      <li>회사는 천재지변, 전쟁, 기간통신사업자의 서비스 중단 등 불가항력적 사유로 인한 서비스 중단에 대해 책임을 지지 않습니다.</li>
-      <li>원본 파일 삭제는 이용자의 명시적 동의 하에 이루어지며, 삭제된 파일은 iOS의 "최근 삭제된 항목"에서 30일간 복구 가능합니다. 이 기간 경과 후의 복구 불가에 대해 회사는 책임을 지지 않습니다.</li>
-    </ul>
-
-    <h2>제13조 (저작권 및 지적재산권)</h2>
-    <p>서비스의 디자인, 로고, 소프트웨어, 기술 등 일체의 지적재산권은 회사에 귀속됩니다. 이용자는 서비스를 이용하여 얻은 정보를 회사의 사전 승낙 없이 상업적으로 이용할 수 없습니다.</p>
-
-    <h2>제14조 (계정 해지 및 탈퇴)</h2>
-    <ul>
-      <li>이용자는 언제든지 앱 내 설정에서 계정을 삭제하여 탈퇴할 수 있습니다.</li>
-      <li>탈퇴 시 이용자의 개인정보는 즉시 파기되며, 유료 구독이 활성화된 경우 해당 구독 기간 종료 시까지 서비스를 이용할 수 있습니다.</li>
-      <li>회사는 이용자가 본 약관을 위반한 경우 사전 통지 후 계정을 정지하거나 해지할 수 있습니다.</li>
-    </ul>
-
-    <h2>제15조 (분쟁 해결)</h2>
-    <p>본 약관과 관련한 분쟁은 대한민국 법률에 따라 해결되며, 분쟁 발생 시 회사의 소재지를 관할하는 법원을 전속 관할 법원으로 합니다.</p>
-
-    <h2>제16조 (연락처)</h2>
-    <ul>
-      <li><strong>회사명:</strong> Smileon</li>
-      <li><strong>서비스명:</strong> Velo</li>
-      <li><strong>이메일:</strong> <a href="mailto:support@smileon.app">support@smileon.app</a></li>
-    </ul>
-
-    <div class="footer">
-      &copy; 2026 Smileon. All rights reserved.
+    <!-- Korean -->
+    <div class="lang-content active" id="content-ko">
+      <div class="hero">
+        <h1>이용약관</h1>
+        <p class="date">시행일: 2026년 3월 20일 | 최종 수정: 2026년 3월 20일</p>
+      </div>
+      <h2>제1조 (목적)</h2>
+      <p>본 약관은 Smileon(이하 "회사")이 제공하는 Velo 서비스(이하 "서비스")의 이용과 관련하여 회사와 이용자 간의 권리, 의무 및 책임 사항 등을 규정함을 목적으로 합니다.</p>
+      <h2>제2조 (정의)</h2>
+      <ul>
+        <li><strong>"서비스"</strong>란 회사가 제공하는 사진 및 동영상 압축 애플리케이션 Velo와 이에 부수하는 모든 기능을 의미합니다.</li>
+        <li><strong>"이용자"</strong>란 본 약관에 따라 서비스를 이용하는 자를 의미합니다.</li>
+        <li><strong>"유료 서비스"</strong>란 월간 구독, 연간 구독, 평생 이용권 등 별도의 요금을 지불하고 이용하는 서비스를 의미합니다.</li>
+        <li><strong>"게스트"</strong>란 회원 가입 없이 제한된 기능을 체험하는 이용자를 의미합니다.</li>
+      </ul>
+      <h2>제3조 (약관의 효력 및 변경)</h2>
+      <p>본 약관은 서비스 내에 공지하거나 이메일 등의 방법으로 이용자에게 통지함으로써 효력이 발생합니다. 회사는 관련 법령에 위배되지 않는 범위에서 약관을 변경할 수 있으며, 변경 시 적용일 7일 전부터 앱 내 공지 또는 이메일을 통해 고지합니다.</p>
+      <h2>제4조 (서비스의 내용)</h2>
+      <p>회사가 제공하는 서비스의 주요 내용은 다음과 같습니다.</p>
+      <ul>
+        <li>사진 압축: HEIC, JPEG, WebP 형식의 이미지 파일 용량 최적화</li>
+        <li>동영상 압축: HEVC 인코딩 기반 비디오 파일 용량 최적화</li>
+        <li>폴더 스캔: 기기 내 사진 라이브러리의 앨범별·월별 파일 탐색</li>
+        <li>오버나이트 압축: 야간 시간대(21시~08시) 자동 압축 처리</li>
+        <li>압축 히스토리: 압축 결과 기록 및 통계 제공</li>
+      </ul>
+      <p>모든 압축 처리는 이용자의 기기 내에서 수행되며, 사진 및 동영상이 회사의 서버로 전송되지 않습니다.</p>
+      <h2>제5조 (서비스 이용 및 계정)</h2>
+      <ul>
+        <li>이용자는 Google 또는 Apple 계정을 통한 소셜 로그인으로 서비스에 가입할 수 있습니다.</li>
+        <li>게스트 모드로 회원 가입 없이 제한된 범위 내에서 서비스를 체험할 수 있습니다.</li>
+        <li>이용자는 자신의 계정 정보를 정확하게 유지할 책임이 있으며, 제3자에게 계정을 양도하거나 공유할 수 없습니다.</li>
+      </ul>
+      <h2>제6조 (무료 서비스 및 이용 제한)</h2>
+      <ul>
+        <li>무료(회원) 이용자: 이미지 20장, 동영상 3개까지 압축 가능</li>
+        <li>게스트 이용자: 이미지 5장, 동영상 5개, 스캔 1회까지 체험 가능</li>
+        <li>무료 이용량을 초과한 경우 유료 서비스 구독을 통해 이용 제한을 해제할 수 있습니다.</li>
+      </ul>
+      <h2>제7조 (유료 서비스 및 결제)</h2>
+      <ul>
+        <li>유료 서비스는 월간 구독, 연간 구독, 평생 이용권으로 제공됩니다.</li>
+        <li>결제는 Apple App Store 또는 Google Play Store의 인앱 결제 시스템을 통해 처리됩니다.</li>
+        <li>구독은 이용자가 직접 해지하지 않는 한 결제 주기에 따라 자동으로 갱신됩니다.</li>
+        <li>구독 해지는 각 스토어의 구독 관리 설정에서 가능하며, 해지 후에도 현재 결제 기간이 종료될 때까지 서비스를 이용할 수 있습니다.</li>
+      </ul>
+      <h2>제8조 (환불 정책)</h2>
+      <p>환불은 Apple App Store 및 Google Play Store의 환불 정책에 따릅니다. 회사는 스토어를 통해 처리된 결제에 대해 직접 환불을 진행하지 않으며, 이용자는 각 스토어의 환불 절차를 따라야 합니다.</p>
+      <h2>제9조 (이용자의 의무)</h2>
+      <p>이용자는 다음 행위를 하여서는 안 됩니다.</p>
+      <ul>
+        <li>서비스를 불법적인 목적으로 이용하는 행위</li>
+        <li>서비스의 정상적인 운영을 방해하는 행위</li>
+        <li>서비스를 역설계, 디컴파일, 또는 분해하는 행위</li>
+        <li>타인의 개인정보를 도용하여 서비스를 이용하는 행위</li>
+        <li>서비스를 이용하여 제3자의 저작권 등 지적재산권을 침해하는 행위</li>
+      </ul>
+      <h2>제10조 (회사의 의무)</h2>
+      <ul>
+        <li>회사는 관련 법령과 본 약관이 정하는 바에 따라 지속적이고 안정적으로 서비스를 제공하기 위해 노력합니다.</li>
+        <li>회사는 이용자의 개인정보를 보호하기 위해 개인정보처리방침을 수립하고 준수합니다.</li>
+        <li>회사는 서비스 장애 발생 시 신속하게 복구하기 위해 최선을 다합니다.</li>
+      </ul>
+      <h2>제11조 (서비스의 변경 및 중단)</h2>
+      <p>회사는 운영상 또는 기술상의 필요에 따라 서비스의 전부 또는 일부를 변경하거나 중단할 수 있습니다. 서비스 변경 또는 중단 시 사전에 앱 내 공지 또는 이메일을 통해 고지합니다. 다만, 불가피한 사유가 있는 경우 사후에 고지할 수 있습니다.</p>
+      <h2>제12조 (면책 조항)</h2>
+      <ul>
+        <li>회사는 이용자가 서비스를 통해 수행한 압축 결과에 대해 보증하지 않습니다. 이용자는 원본 파일의 백업을 직접 관리할 책임이 있습니다.</li>
+        <li>회사는 이용자의 귀책 사유로 인한 서비스 이용 장애에 대해 책임을 지지 않습니다.</li>
+        <li>회사는 천재지변, 전쟁, 기간통신사업자의 서비스 중단 등 불가항력적 사유로 인한 서비스 중단에 대해 책임을 지지 않습니다.</li>
+        <li>원본 파일 삭제는 이용자의 명시적 동의 하에 이루어지며, 삭제된 파일은 iOS의 "최근 삭제된 항목"에서 30일간 복구 가능합니다. 이 기간 경과 후의 복구 불가에 대해 회사는 책임을 지지 않습니다.</li>
+      </ul>
+      <h2>제13조 (저작권 및 지적재산권)</h2>
+      <p>서비스의 디자인, 로고, 소프트웨어, 기술 등 일체의 지적재산권은 회사에 귀속됩니다. 이용자는 서비스를 이용하여 얻은 정보를 회사의 사전 승낙 없이 상업적으로 이용할 수 없습니다.</p>
+      <h2>제14조 (계정 해지 및 탈퇴)</h2>
+      <ul>
+        <li>이용자는 언제든지 앱 내 설정에서 계정을 삭제하여 탈퇴할 수 있습니다.</li>
+        <li>탈퇴 시 이용자의 개인정보는 즉시 파기되며, 유료 구독이 활성화된 경우 해당 구독 기간 종료 시까지 서비스를 이용할 수 있습니다.</li>
+        <li>회사는 이용자가 본 약관을 위반한 경우 사전 통지 후 계정을 정지하거나 해지할 수 있습니다.</li>
+      </ul>
+      <h2>제15조 (분쟁 해결)</h2>
+      <p>본 약관과 관련한 분쟁은 대한민국 법률에 따라 해결되며, 분쟁 발생 시 회사의 소재지를 관할하는 법원을 전속 관할 법원으로 합니다.</p>
+      <h2>제16조 (연락처)</h2>
+      <ul>
+        <li><strong>회사명:</strong> Smileon</li>
+        <li><strong>서비스명:</strong> Velo</li>
+        <li><strong>이메일:</strong> <a href="mailto:support@smileon.app">support@smileon.app</a></li>
+      </ul>
     </div>
+
+    <!-- English -->
+    <div class="lang-content" id="content-en">
+      <div class="hero">
+        <h1>Terms of Service</h1>
+        <p class="date">Effective: March 20, 2026 | Last Updated: March 20, 2026</p>
+      </div>
+      <h2>1. Purpose</h2>
+      <p>These Terms of Service ("Terms") govern the rights, obligations, and responsibilities between Smileon ("Company") and users ("Users") regarding the use of the Velo application ("Service").</p>
+      <h2>2. Definitions</h2>
+      <ul>
+        <li><strong>"Service"</strong> refers to the Velo photo and video compression application provided by the Company and all associated features.</li>
+        <li><strong>"User"</strong> refers to any individual who uses the Service in accordance with these Terms.</li>
+        <li><strong>"Paid Service"</strong> refers to services that require separate payment, including monthly subscriptions, annual subscriptions, and lifetime licenses.</li>
+        <li><strong>"Guest"</strong> refers to a user who experiences limited features without creating an account.</li>
+      </ul>
+      <h2>3. Effectiveness and Modification of Terms</h2>
+      <p>These Terms become effective upon notification to Users through in-app announcements or email. The Company may modify these Terms to the extent permitted by applicable laws, and will notify Users at least 7 days before the effective date of changes through in-app announcements or email.</p>
+      <h2>4. Description of Service</h2>
+      <p>The main features provided by the Service include:</p>
+      <ul>
+        <li>Photo compression: Optimization of HEIC, JPEG, and WebP image file sizes</li>
+        <li>Video compression: HEVC encoding-based video file size optimization</li>
+        <li>Folder scanning: Album-based and month-based file browsing within the device's photo library</li>
+        <li>Overnight compression: Automatic compression during nighttime hours (9 PM - 8 AM)</li>
+        <li>Compression history: Records and statistics of compression results</li>
+      </ul>
+      <p>All compression processing is performed on the User's device. Photos and videos are never transmitted to the Company's servers.</p>
+      <h2>5. Service Usage and Accounts</h2>
+      <ul>
+        <li>Users may sign up for the Service through social login via Google or Apple accounts.</li>
+        <li>Users may experience limited features in Guest mode without creating an account.</li>
+        <li>Users are responsible for maintaining accurate account information and may not transfer or share their accounts with third parties.</li>
+      </ul>
+      <h2>6. Free Service and Usage Limits</h2>
+      <ul>
+        <li>Free (registered) users: Up to 20 images and 3 videos</li>
+        <li>Guest users: Up to 5 images, 5 videos, and 1 scan</li>
+        <li>Users who exceed free usage limits may subscribe to a Paid Service to unlock unlimited access.</li>
+      </ul>
+      <h2>7. Paid Service and Payment</h2>
+      <ul>
+        <li>Paid Services are offered as monthly subscriptions, annual subscriptions, and lifetime licenses.</li>
+        <li>Payments are processed through the in-app purchase systems of Apple App Store or Google Play Store.</li>
+        <li>Subscriptions automatically renew according to the billing cycle unless the User cancels.</li>
+        <li>Subscription cancellation is available through the subscription management settings of each store. After cancellation, the Service remains accessible until the end of the current billing period.</li>
+      </ul>
+      <h2>8. Refund Policy</h2>
+      <p>Refunds are subject to the refund policies of Apple App Store and Google Play Store. The Company does not process direct refunds for payments made through the stores. Users must follow the refund procedures of the respective store.</p>
+      <h2>9. User Obligations</h2>
+      <p>Users shall not engage in the following activities:</p>
+      <ul>
+        <li>Using the Service for illegal purposes</li>
+        <li>Interfering with the normal operation of the Service</li>
+        <li>Reverse engineering, decompiling, or disassembling the Service</li>
+        <li>Using the Service by misappropriating another person's personal information</li>
+        <li>Using the Service to infringe upon the intellectual property rights of third parties</li>
+      </ul>
+      <h2>10. Company Obligations</h2>
+      <ul>
+        <li>The Company endeavors to provide the Service continuously and reliably in accordance with applicable laws and these Terms.</li>
+        <li>The Company establishes and adheres to a Privacy Policy to protect Users' personal information.</li>
+        <li>The Company makes its best effort to promptly resolve any service disruptions.</li>
+      </ul>
+      <h2>11. Service Modification and Suspension</h2>
+      <p>The Company may modify or suspend all or part of the Service for operational or technical reasons. Users will be notified in advance through in-app announcements or email. In unavoidable circumstances, notification may be provided afterward.</p>
+      <h2>12. Disclaimer</h2>
+      <ul>
+        <li>The Company does not guarantee the results of compression performed through the Service. Users are responsible for managing backups of their original files.</li>
+        <li>The Company is not liable for service disruptions caused by the User's own actions.</li>
+        <li>The Company is not liable for service interruptions caused by force majeure events, including natural disasters, wars, or telecommunications service disruptions.</li>
+        <li>Deletion of original files is performed only with the User's explicit consent. Deleted files can be recovered from iOS "Recently Deleted" for 30 days. The Company is not responsible for the inability to recover files after this period.</li>
+      </ul>
+      <h2>13. Intellectual Property Rights</h2>
+      <p>All intellectual property rights, including the design, logo, software, and technology of the Service, belong to the Company. Users may not commercially use information obtained through the Service without the Company's prior consent.</p>
+      <h2>14. Account Termination and Withdrawal</h2>
+      <ul>
+        <li>Users may delete their account and withdraw at any time through the app's settings.</li>
+        <li>Upon withdrawal, the User's personal information is immediately destroyed. If an active paid subscription exists, the Service remains accessible until the end of the current subscription period.</li>
+        <li>The Company may suspend or terminate a User's account after prior notice if the User violates these Terms.</li>
+      </ul>
+      <h2>15. Dispute Resolution</h2>
+      <p>Disputes related to these Terms shall be governed by the laws of the Republic of Korea. In the event of a dispute, the court having jurisdiction over the Company's location shall serve as the exclusive court of jurisdiction.</p>
+      <h2>16. Contact Information</h2>
+      <ul>
+        <li><strong>Company:</strong> Smileon</li>
+        <li><strong>Service:</strong> Velo</li>
+        <li><strong>Email:</strong> <a href="mailto:support@smileon.app">support@smileon.app</a></li>
+      </ul>
+    </div>
+
+    <!-- Japanese -->
+    <div class="lang-content" id="content-ja">
+      <div class="hero">
+        <h1>利用規約</h1>
+        <p class="date">施行日：2026年3月20日 | 最終更新：2026年3月20日</p>
+      </div>
+      <h2>第1条（目的）</h2>
+      <p>本規約は、Smileon（以下「当社」）が提供する Velo サービス（以下「本サービス」）の利用に関して、当社とユーザー間の権利、義務および責任事項等を定めることを目的とします。</p>
+      <h2>第2条（定義）</h2>
+      <ul>
+        <li><strong>「本サービス」</strong>とは、当社が提供する写真および動画圧縮アプリケーション Velo およびこれに付随するすべての機能を意味します。</li>
+        <li><strong>「ユーザー」</strong>とは、本規約に従って本サービスを利用する者を意味します。</li>
+        <li><strong>「有料サービス」</strong>とは、月額サブスクリプション、年額サブスクリプション、永久ライセンス等、別途料金を支払って利用するサービスを意味します。</li>
+        <li><strong>「ゲスト」</strong>とは、アカウント登録なしで限定された機能を体験するユーザーを意味します。</li>
+      </ul>
+      <h2>第3条（規約の効力および変更）</h2>
+      <p>本規約は、アプリ内の告知またはメール等の方法によりユーザーに通知することで効力が発生します。当社は関連法令に違反しない範囲で規約を変更できるものとし、変更時は適用日の7日前からアプリ内告知またはメールにて通知します。</p>
+      <h2>第4条（サービスの内容）</h2>
+      <p>当社が提供するサービスの主な内容は以下の通りです。</p>
+      <ul>
+        <li>写真圧縮：HEIC、JPEG、WebP形式の画像ファイルサイズ最適化</li>
+        <li>動画圧縮：HEVCエンコーディングによる動画ファイルサイズ最適化</li>
+        <li>フォルダスキャン：デバイスのフォトライブラリ内のアルバム別・月別ファイル閲覧</li>
+        <li>オーバーナイト圧縮：夜間時間帯（21時〜08時）の自動圧縮処理</li>
+        <li>圧縮履歴：圧縮結果の記録および統計提供</li>
+      </ul>
+      <p>すべての圧縮処理はユーザーのデバイス上で実行され、写真および動画が当社のサーバーに送信されることはありません。</p>
+      <h2>第5条（サービスの利用およびアカウント）</h2>
+      <ul>
+        <li>ユーザーは Google または Apple アカウントによるソーシャルログインでサービスに登録できます。</li>
+        <li>ゲストモードではアカウント登録なしで限定された範囲内でサービスを体験できます。</li>
+        <li>ユーザーは自身のアカウント情報を正確に維持する責任があり、第三者にアカウントを譲渡または共有することはできません。</li>
+      </ul>
+      <h2>第6条（無料サービスおよび利用制限）</h2>
+      <ul>
+        <li>無料（会員）ユーザー：画像20枚、動画3本まで圧縮可能</li>
+        <li>ゲストユーザー：画像5枚、動画5本、スキャン1回まで体験可能</li>
+        <li>無料利用量を超過した場合、有料サービスの購読により利用制限を解除できます。</li>
+      </ul>
+      <h2>第7条（有料サービスおよび決済）</h2>
+      <ul>
+        <li>有料サービスは月額サブスクリプション、年額サブスクリプション、永久ライセンスで提供されます。</li>
+        <li>決済は Apple App Store または Google Play Store のアプリ内課金システムを通じて処理されます。</li>
+        <li>サブスクリプションはユーザーが直接解約しない限り、課金サイクルに従い自動更新されます。</li>
+        <li>サブスクリプションの解約は各ストアのサブスクリプション管理設定から可能で、解約後も現在の課金期間終了までサービスを利用できます。</li>
+      </ul>
+      <h2>第8条（返金ポリシー）</h2>
+      <p>返金は Apple App Store および Google Play Store の返金ポリシーに従います。当社はストアを通じて処理された決済について直接返金を行わず、ユーザーは各ストアの返金手続きに従う必要があります。</p>
+      <h2>第9条（ユーザーの義務）</h2>
+      <p>ユーザーは以下の行為を行ってはなりません。</p>
+      <ul>
+        <li>本サービスを違法な目的で利用する行為</li>
+        <li>本サービスの正常な運営を妨害する行為</li>
+        <li>本サービスをリバースエンジニアリング、逆コンパイル、または逆アセンブルする行為</li>
+        <li>他人の個人情報を盗用してサービスを利用する行為</li>
+        <li>本サービスを利用して第三者の知的財産権を侵害する行為</li>
+      </ul>
+      <h2>第10条（当社の義務）</h2>
+      <ul>
+        <li>当社は関連法令および本規約の定めに従い、継続的かつ安定的にサービスを提供するよう努めます。</li>
+        <li>当社はユーザーの個人情報を保護するためプライバシーポリシーを策定し遵守します。</li>
+        <li>当社はサービス障害発生時、速やかな復旧に最善を尽くします。</li>
+      </ul>
+      <h2>第11条（サービスの変更および中断）</h2>
+      <p>当社は運営上または技術上の必要に応じてサービスの全部または一部を変更または中断できます。サービスの変更または中断時は事前にアプリ内告知またはメールにて通知します。ただし、やむを得ない事由がある場合は事後に通知できるものとします。</p>
+      <h2>第12条（免責事項）</h2>
+      <ul>
+        <li>当社はユーザーが本サービスを通じて行った圧縮結果を保証しません。ユーザーはオリジナルファイルのバックアップを自己の責任で管理する必要があります。</li>
+        <li>ユーザーの責に帰すべき事由によるサービス利用障害について、当社は責任を負いません。</li>
+        <li>天災地変、戦争、通信事業者のサービス中断等の不可抗力によるサービス中断について、当社は責任を負いません。</li>
+        <li>オリジナルファイルの削除はユーザーの明示的な同意のもとに行われます。削除されたファイルは iOS の「最近削除した項目」で30日間復元可能です。この期間経過後の復元不可について当社は責任を負いません。</li>
+      </ul>
+      <h2>第13条（著作権および知的財産権）</h2>
+      <p>本サービスのデザイン、ロゴ、ソフトウェア、技術等の一切の知的財産権は当社に帰属します。ユーザーは本サービスを利用して得た情報を当社の事前承諾なく商業的に利用することはできません。</p>
+      <h2>第14条（アカウント解約および退会）</h2>
+      <ul>
+        <li>ユーザーはいつでもアプリ内の設定からアカウントを削除して退会できます。</li>
+        <li>退会時、ユーザーの個人情報は即時破棄されます。有料サブスクリプションが有効な場合、当該サブスクリプション期間終了までサービスを利用できます。</li>
+        <li>ユーザーが本規約に違反した場合、当社は事前通知の上、アカウントを停止または解約できるものとします。</li>
+      </ul>
+      <h2>第15条（紛争解決）</h2>
+      <p>本規約に関連する紛争は大韓民国の法律に従い解決されるものとし、紛争発生時は当社の所在地を管轄する裁判所を専属管轄裁判所とします。</p>
+      <h2>第16条（連絡先）</h2>
+      <ul>
+        <li><strong>会社名：</strong>Smileon</li>
+        <li><strong>サービス名：</strong>Velo</li>
+        <li><strong>メールアドレス：</strong><a href="mailto:support@smileon.app">support@smileon.app</a></li>
+      </ul>
+    </div>
+
+    <!-- Chinese -->
+    <div class="lang-content" id="content-zh">
+      <div class="hero">
+        <h1>服务条款</h1>
+        <p class="date">生效日期：2026年3月20日 | 最后更新：2026年3月20日</p>
+      </div>
+      <h2>第1条 目的</h2>
+      <p>本条款旨在规定 Smileon（以下简称"公司"）提供的 Velo 服务（以下简称"服务"）的使用相关事项，明确公司与用户之间的权利、义务及责任。</p>
+      <h2>第2条 定义</h2>
+      <ul>
+        <li><strong>"服务"</strong>是指公司提供的照片和视频压缩应用程序 Velo 及其所有附属功能。</li>
+        <li><strong>"用户"</strong>是指按照本条款使用服务的个人。</li>
+        <li><strong>"付费服务"</strong>是指需要另行付费的服务，包括月度订阅、年度订阅和终身许可。</li>
+        <li><strong>"访客"</strong>是指未注册账户即可体验有限功能的用户。</li>
+      </ul>
+      <h2>第3条 条款的效力及变更</h2>
+      <p>本条款通过应用内公告或电子邮件通知用户后生效。公司可在不违反相关法律法规的范围内变更本条款，变更时将在生效日前7天通过应用内公告或电子邮件告知。</p>
+      <h2>第4条 服务内容</h2>
+      <p>公司提供的服务主要内容如下：</p>
+      <ul>
+        <li>照片压缩：HEIC、JPEG、WebP格式图片文件大小优化</li>
+        <li>视频压缩：基于HEVC编码的视频文件大小优化</li>
+        <li>文件夹扫描：设备照片库中按相册、按月份浏览文件</li>
+        <li>夜间压缩：夜间时段（21:00~08:00）自动压缩处理</li>
+        <li>压缩历史：压缩结果记录及统计</li>
+      </ul>
+      <p>所有压缩处理均在用户设备上进行，照片和视频不会传输至公司服务器。</p>
+      <h2>第5条 服务使用与账户</h2>
+      <ul>
+        <li>用户可通过 Google 或 Apple 账户社交登录注册服务。</li>
+        <li>用户可在访客模式下无需注册即可在有限范围内体验服务。</li>
+        <li>用户有责任保持账户信息的准确性，不得将账户转让或与第三方共享。</li>
+      </ul>
+      <h2>第6条 免费服务及使用限制</h2>
+      <ul>
+        <li>免费（注册）用户：最多可压缩20张图片和3个视频</li>
+        <li>访客用户：最多可体验5张图片、5个视频和1次扫描</li>
+        <li>超出免费使用量后，可通过订阅付费服务解除使用限制。</li>
+      </ul>
+      <h2>第7条 付费服务及支付</h2>
+      <ul>
+        <li>付费服务提供月度订阅、年度订阅和终身许可。</li>
+        <li>支付通过 Apple App Store 或 Google Play Store 的应用内购买系统处理。</li>
+        <li>除非用户主动取消，否则订阅将按计费周期自动续订。</li>
+        <li>可在各应用商店的订阅管理设置中取消订阅。取消后，服务在当前计费期结束前仍可使用。</li>
+      </ul>
+      <h2>第8条 退款政策</h2>
+      <p>退款按照 Apple App Store 和 Google Play Store 的退款政策执行。公司不直接处理通过应用商店进行的付款退款，用户需按照各应用商店的退款流程办理。</p>
+      <h2>第9条 用户义务</h2>
+      <p>用户不得从事以下行为：</p>
+      <ul>
+        <li>将服务用于非法目的</li>
+        <li>干扰服务的正常运行</li>
+        <li>对服务进行逆向工程、反编译或反汇编</li>
+        <li>盗用他人个人信息使用服务</li>
+        <li>利用服务侵犯第三方的知识产权</li>
+      </ul>
+      <h2>第10条 公司义务</h2>
+      <ul>
+        <li>公司按照相关法律法规和本条款的规定，努力持续、稳定地提供服务。</li>
+        <li>公司制定并遵守隐私政策以保护用户的个人信息。</li>
+        <li>公司在服务出现故障时尽最大努力迅速恢复。</li>
+      </ul>
+      <h2>第11条 服务变更及中断</h2>
+      <p>公司可根据运营或技术需要变更或中断全部或部分服务。变更或中断服务时将提前通过应用内公告或电子邮件告知。在不可避免的情况下，可事后告知。</p>
+      <h2>第12条 免责声明</h2>
+      <ul>
+        <li>公司不对用户通过服务进行的压缩结果作出保证。用户有责任自行管理原始文件的备份。</li>
+        <li>对于因用户自身原因导致的服务使用障碍，公司不承担责任。</li>
+        <li>对于因自然灾害、战争、电信运营商服务中断等不可抗力事由导致的服务中断，公司不承担责任。</li>
+        <li>原始文件的删除仅在用户明确同意的情况下进行。已删除的文件可在 iOS"最近删除"中保留30天。超过此期限后无法恢复，公司对此不承担责任。</li>
+      </ul>
+      <h2>第13条 知识产权</h2>
+      <p>服务的设计、标识、软件、技术等所有知识产权归公司所有。未经公司事先同意，用户不得将通过服务获取的信息用于商业目的。</p>
+      <h2>第14条 账户注销与退出</h2>
+      <ul>
+        <li>用户可随时通过应用内设置删除账户并退出。</li>
+        <li>退出时用户的个人信息将立即销毁。如有有效的付费订阅，服务在当前订阅期结束前仍可使用。</li>
+        <li>如用户违反本条款，公司可在事先通知后暂停或终止用户账户。</li>
+      </ul>
+      <h2>第15条 争议解决</h2>
+      <p>与本条款相关的争议适用大韩民国法律。发生争议时，以公司所在地管辖法院为专属管辖法院。</p>
+      <h2>第16条 联系方式</h2>
+      <ul>
+        <li><strong>公司名称：</strong>Smileon</li>
+        <li><strong>服务名称：</strong>Velo</li>
+        <li><strong>电子邮箱：</strong><a href="mailto:support@smileon.app">support@smileon.app</a></li>
+      </ul>
+    </div>
+
+    <div class="footer">&copy; 2026 Smileon. All rights reserved.</div>
   </div>
+
+  <script>
+    (function() {
+      var buttons = document.querySelectorAll('.lang-btn');
+      var contents = document.querySelectorAll('.lang-content');
+      function switchLang(lang) {
+        buttons.forEach(function(btn) { btn.classList.toggle('active', btn.getAttribute('data-lang') === lang); });
+        contents.forEach(function(c) { c.classList.toggle('active', c.id === 'content-' + lang); });
+        document.documentElement.lang = lang === 'zh' ? 'zh-CN' : lang;
+        history.replaceState(null, '', '?lang=' + lang);
+      }
+      buttons.forEach(function(btn) { btn.addEventListener('click', function() { switchLang(this.getAttribute('data-lang')); }); });
+      var params = new URLSearchParams(window.location.search);
+      var lang = params.get('lang');
+      if (!lang) {
+        var bl = (navigator.language || '').toLowerCase();
+        if (bl.startsWith('ja')) lang = 'ja';
+        else if (bl.startsWith('zh')) lang = 'zh';
+        else if (bl.startsWith('en')) lang = 'en';
+        else lang = 'ko';
+      }
+      if (['ko','en','ja','zh'].indexOf(lang) === -1) lang = 'ko';
+      switchLang(lang);
+    })();
+  </script>
 </body>
 </html>
