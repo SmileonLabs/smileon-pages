@@ -82,6 +82,7 @@
         <tr><td>필수</td><td>이름, 이메일 주소</td><td>Google/Apple 소셜 로그인 시 자동 수집</td></tr>
         <tr><td>자동 생성</td><td>사용자 고유 식별자(UID), 기기 식별자</td><td>계정 생성 및 서비스 이용 시 자동 생성</td></tr>
         <tr><td>자동 수집</td><td>구매 내역(구독 상태, 결제 유형)</td><td>RevenueCat을 통한 인앱 결제 시</td></tr>
+        <tr><td>자동 수집</td><td>구독 이력(구독 플랜, 결제 일시)</td><td>자체 서버(Supabase)에 저장 — Pro 상태 복원 목적</td></tr>
         <tr><td>자동 수집</td><td>앱 비정상 종료 로그, 성능 데이터</td><td>앱 사용 중 자동 수집</td></tr>
       </tbody></table>
       <p><strong>수집하지 않는 정보:</strong> 전화번호, 주소, 위치 정보, 연락처(주소록), 금융 정보(카드 번호 등). 결제 정보는 Apple App Store 및 Google Play Store가 직접 처리하며, 회사는 접근하지 않습니다.</p>
@@ -151,6 +152,7 @@
         <tr><td>Required</td><td>Name, email address</td><td>Automatically collected via Google/Apple social login</td></tr>
         <tr><td>Auto-generated</td><td>User unique identifier (UID), device identifier</td><td>Generated upon account creation and service usage</td></tr>
         <tr><td>Auto-collected</td><td>Purchase history (subscription status, payment type)</td><td>Collected through RevenueCat during in-app purchases</td></tr>
+        <tr><td>Auto-collected</td><td>Subscription history (plan type, purchase date)</td><td>Stored on our own server (Supabase) for Pro status restoration</td></tr>
         <tr><td>Auto-collected</td><td>App crash logs, performance data</td><td>Automatically collected during app usage</td></tr>
       </tbody></table>
       <p><strong>Information We Do NOT Collect:</strong> Phone number, physical address, location data, contacts (address book), financial information (card numbers, etc.). Payment processing is handled directly by Apple App Store and Google Play Store; the Company does not have access to this information.</p>
@@ -220,6 +222,7 @@
         <tr><td>必須</td><td>氏名、メールアドレス</td><td>Google/Appleソーシャルログイン時に自動収集</td></tr>
         <tr><td>自動生成</td><td>ユーザー固有識別子（UID）、デバイス識別子</td><td>アカウント作成およびサービス利用時に自動生成</td></tr>
         <tr><td>自動収集</td><td>購入履歴（サブスクリプション状態、決済タイプ）</td><td>RevenueCatを通じたアプリ内課金時に収集</td></tr>
+        <tr><td>自動収集</td><td>サブスクリプション履歴（プランタイプ、購入日時）</td><td>自社サーバー（Supabase）に保存 — Pro状態復元のため</td></tr>
         <tr><td>自動収集</td><td>アプリクラッシュログ、パフォーマンスデータ</td><td>アプリ使用中に自動収集</td></tr>
       </tbody></table>
       <p><strong>収集しない情報：</strong>電話番号、住所、位置情報、連絡先（アドレス帳）、金融情報（カード番号等）。決済情報はApple App StoreおよびGoogle Play Storeが直接処理しており、当社はアクセスできません。</p>
@@ -289,6 +292,7 @@
         <tr><td>必填</td><td>姓名、电子邮箱</td><td>通过 Google/Apple 社交登录自动收集</td></tr>
         <tr><td>自动生成</td><td>用户唯一标识符（UID）、设备标识符</td><td>创建账户及使用服务时自动生成</td></tr>
         <tr><td>自动收集</td><td>购买记录（订阅状态、支付类型）</td><td>通过 RevenueCat 在应用内购买时收集</td></tr>
+        <tr><td>自动收集</td><td>订阅记录（套餐类型、购买时间）</td><td>存储于自有服务器（Supabase），用于恢复 Pro 状态</td></tr>
         <tr><td>自动收集</td><td>应用崩溃日志、性能数据</td><td>使用应用时自动收集</td></tr>
       </tbody></table>
       <p><strong>我们不收集的信息：</strong>电话号码、地址、位置信息、通讯录、金融信息（银行卡号等）。支付信息由 Apple App Store 和 Google Play Store 直接处理，公司无法访问。</p>
@@ -358,6 +362,7 @@
         <tr><td>Obligatorio</td><td>Nombre, dirección de correo electrónico</td><td>Recopilado automáticamente mediante inicio de sesión social con Google/Apple</td></tr>
         <tr><td>Generado automáticamente</td><td>Identificador único de usuario (UID), identificador de dispositivo</td><td>Generado al crear la cuenta y usar el servicio</td></tr>
         <tr><td>Recopilado automáticamente</td><td>Historial de compras (estado de suscripción, tipo de pago)</td><td>Recopilado a través de RevenueCat durante compras en la app</td></tr>
+        <tr><td>Recopilado automáticamente</td><td>Historial de suscripción (tipo de plan, fecha de compra)</td><td>Almacenado en nuestro servidor (Supabase) para restaurar el estado Pro</td></tr>
         <tr><td>Recopilado automáticamente</td><td>Registros de fallos de la app, datos de rendimiento</td><td>Recopilados automáticamente durante el uso de la app</td></tr>
       </tbody></table>
       <p><strong>Información que NO recopilamos:</strong> Número de teléfono, dirección física, datos de ubicación, contactos (libreta de direcciones), información financiera (números de tarjeta, etc.). El procesamiento de pagos es realizado directamente por Apple App Store y Google Play Store; la Empresa no tiene acceso a esta información.</p>
